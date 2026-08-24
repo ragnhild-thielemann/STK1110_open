@@ -42,10 +42,12 @@ vek_a = c()
 for (i in 1:terms){
   vek_a = c(vek_a,i)}
 
-data_frame_ja = data.frame(vek_a,vek_l,vek_n) #opretter dataframe
+data_frame_ja = data.frame("n" = vek_a,"Leibnitz" = vek_l,"Nilakantha" = vek_n) #opretter dataframe
 
 return (data_frame_ja)} 
 
-data_frame = vek(100) #lager en instans av klassen
+data_frame = vek(20) #lager en instans av klassen
 
-view(data_frame)
+
+pi_plot = ggplot(data_frame) + geom_point(aes(x = n, y =Leibnitz,color = "Leibniz")) + geom_point(aes(x = n,y =Nilakantha,color = "Nilakantha" )) + labs(x = "Antall intraksjoner",y="reusidal",color = "Beregning",title = "Beregning")
+ggsave("intrasjoner_pi.png",plot = pi_plot)
