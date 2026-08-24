@@ -14,7 +14,7 @@ Denne oppgaven tar for seg multippel linjær regresjon. Vi har følgene variable
 
 # Analyse av resulatene ved ulike universiteter
 
-Datasettet [Data](https://github.com/ragnhild-thielemann/STK1110_open/blob/main/uni.csv) har følgene variabler:
+[Datasettet](https://github.com/ragnhild-thielemann/STK1110_open/blob/main/uni.csv) har følgene variabler:
 
 $$
 Y = b_0 + b_1 \cdot x_1 + b_2 \cdot x_2 + \epsilon 
