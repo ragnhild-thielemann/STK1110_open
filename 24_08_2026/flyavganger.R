@@ -27,5 +27,18 @@ ggsave("cor_forsinkelser.png",plot = f)
 
 #Forsiknet, men klarte å ta igjen -> tar det dobbelt
 a = flights |> filter(dep_delay> 120 & arr_delay < (dep_delay-30)) 
-View(a)
 
+
+a = flights |> arrange(desc(dep_delay))
+
+
+#flyr til Houston
+
+a = flights |> filter(dest == "HOU" | dest == "IAH")
+
+
+#sortere fra seneste til tidligste flyvning
+tidlig = flights |> arrange((dep_time))
+
+#henter ut det første flyet
+tidlig[-1,]
