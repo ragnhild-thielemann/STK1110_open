@@ -25,4 +25,9 @@ funk = function(x){
   return (a + b*x)
 }
 
-  
+a = data.frame(x = x, y = funk(x))
+
+
+#lager et plot, der jeg legger over regresjonanalysen. Bruker da to ulike datasett for de to ulike linjære modellene
+ggplot() + geom_point(data = data, aes(x = Height, y = Wingspan)) + geom_smooth(data = a, aes(x = x, y = y))
+
