@@ -1,5 +1,5 @@
 
-
+library(tidyverse)
 data = read.csv("uni.csv", sep = ",", header = TRUE)
 
 
@@ -10,4 +10,5 @@ x2 = data$Median_SAT
 
 model = lm(data$Grad_rate ~ x1 + x2)
 
+#man kan bare plotte for å finne modellantagelsene
 summary(model)
