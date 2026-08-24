@@ -1,8 +1,6 @@
 
-print("hei")
-pi_gregory = 0
-terms = 14
-denominator = 1
+library(tidyverse)
+
 
 #lager to kallbare funksjoner for å etsimere pi
 pi_g = function(terms){
@@ -29,16 +27,25 @@ return (pi_nil)}
 print(pi_n(10))
 
 #skal lage to vektorer, som ser på hvordan de approksimeres ved ulik mengde intraksjoner
-
+#finner differansen til den sanne verdien for pi for ulike verdier av n.
+#funksjonen returnerer en dataframe
 vek = function(terms){
   
 
 vek_l = c()
-vel_n = c()
-for (i in 1:10){
-  vek_l = c(vek_l,pi_g(i)-pi)
+for (i in 1:terms){
+  vek_l = c(vek_l,pi_g(i)-pi)}
+vek_n = c()
+  for (i in 1:terms){
+    vek_n = c(vek_n,pi_n(i)-pi)}
+vek_a = c()
+for (i in 1:terms){
+  vek_a = c(vek_a,i)}
 
-}
-return (vek_l)}
+data_frame_ja = data.frame(vek_a,vek_l,vek_n) #opretter dataframe
 
-print(vek(10))
+return (data_frame_ja)} 
+
+data_frame = vek(100) #lager en instans av klassen
+
+view(data_frame)
