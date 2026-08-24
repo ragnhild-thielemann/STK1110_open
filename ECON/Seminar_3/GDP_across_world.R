@@ -4,7 +4,7 @@ library(readr)
 library(tidyverse)
 pwt = read.csv("pwt.csv", head = TRUE)
 
-pwt = pwt[pwt$year>1970,]
+pwt = pwt[pwt$year>=1970,]
 
 gdp_nor = pwt[pwt$country == "Norway",]
 gdp_nor = data.frame(gdp_nor$year,gdp_nor$gdp)
@@ -13,19 +13,14 @@ p = ggplot(gdp_nor,aes(x = gdp_nor.year, y = gdp_nor.gdp)) + geom_point() + labs
 ggsave("GDP_norway.png",plot = p)
 
 #grow rates for china
-china_70_00 = pwt |> filter(pwt$country == "China" & pwt$year <2000 & pwt$year > 1970)
+china_70_00 = pwt |> filter(country == "China" & year <= 2000 & year >= 1970) |> mutate(growrate = (gdp - lag(gdp))/lag(gdp))
 
-print(china_70_00)
-vekst = function(x){
-  vekst = c()
-  ar = length(x)
-  for (i in 1:ar){
-    vekst = c(vekst,x[i+1]-x[i])}
-  
-  return (vekst)
-}
+print(pwt)
 
-v = (vekst(china_70_00$gdp))
-ar = china_70_00$year
+china_70_00 = china_70_00 |> filter(year > 1970)
 
-frame = data.frame(ar,v)
+china_70_00$growrate[1] = 0
+
+ggplot(china_70_00) + geom_point(aes(x = year, y = growrate)) + labs(title = "Vekst i kinesisk økonomi")
+
+
