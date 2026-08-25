@@ -9,11 +9,11 @@ pwt = pwt[pwt$year>=1970,]
 gdp_nor = pwt[pwt$country == "Norway",]
 gdp_nor = data.frame(gdp_nor$year,gdp_nor$gdp)
 
-p = ggplot(gdp_nor,aes(x = gdp_nor.year, y = gdp_nor.gdp)) + geom_point() + labs(x = "Year",y = "GDP",title = "GDP in Norway")
+ggplot(gdp_nor,aes(x = gdp_nor.year, y = gdp_nor.gdp)) + geom_point() + labs(x = "Year",y = "GDP",title = "GDP in Norway")
 ggsave("GDP_norway.png",plot = p)
 
 #grow rates for china
-china_70_00 = pwt |> filter(country == "China" & year <= 2000 & year >= 1970) |> mutate(growrate = (gdp - lag(gdp))/lag(gdp))
+china_70_00 = pwt |> filter(country == "China" & year <= 2000 & year >= 1970) |> mutate("growrate" = (gdp - lag(gdp))/lag(gdp))
 
 print(pwt)
 
@@ -25,7 +25,7 @@ gdp_1970 = (pwt$gdp[pwt$year == 1970])
 gdp_2000 = (pwt$gdp[pwt$year == 2000])
 
 
-a = pwt$country[pwt$year== "1970"]
+pwt$country[pwt$year== "1970"]
 print(a)
 growth = data.frame( "Land" = a, "1970" = gdp_1970 ,"2000" =  gdp_2000)
 
@@ -39,7 +39,7 @@ print(growth$X1970)
 growth$X1970 = log(growth$X1970)
 growth$X2000 = log(growth$X2000)
 
-p = ggplot(growth) + geom_point(aes(x = X1970, y = growth)) + labs(x = "Logaritmen av BNP - 1970" , y = "vekst 1970-2000" , title = "Vekst som funksjon av BNP")
+ggplot(growth) + geom_point(aes(x = X1970, y = growth)) + labs(x = "Logaritmen av BNP - 1970" , y = "vekst 1970-2000" , title = "Vekst som funksjon av BNP")
 
 ggsave("Vekst_BNP.png", plot = p)
 
