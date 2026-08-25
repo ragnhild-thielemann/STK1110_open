@@ -17,12 +17,16 @@ china_70_00 = pwt |> filter(country == "China" & year <= 2000 & year >= 1970) |>
 
 print(pwt)
 
-china_70_00 = china_70_00 |> filter(year > 1970)
+#lager veksten i kina som en ny variabel
+china = pwt |> filter(country == "China" & year >= 1970 & year <=2000) |> mutate("vekst" = (gdp-lag(gdp))/lag(gdp)) #mutate lager en ny kolonne i data_framen
 
-china_70_00$growrate[1] = 0
+#finner logaritmen til gdp i årenen henholdsvis 1970 og 2000
+gdp_1970 = log(pwt$gdp[pwt$year == 1970])
+gdp_2000 = log(pwt$gdp[pwt$year == 2000])
 
-p = ggplot(china_70_00) + geom_point(aes(x = year, y = growrate)) + labs(x = "year", y = "growrate", title = "Kinesisk vekst")
-ggsave("kinas_vekst.png",plot = p)
 
-qnorm(1-0.01/2)
-pnorm(2.236)
+a = pwt$country[pwt$year== "1970"]
+print(a)
+pwt.growth = data.frame( "Land" = a, "1970" = gdp_1970 ,"2000" =  gdp_2000)
+view(pwt.growth)
+
