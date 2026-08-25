@@ -40,5 +40,5 @@ global_us_china = global_us_china |> mutate(us_andel = ((co2_usa)/mean_co2)) |> 
 
 
 
-p = ggplot() + geom_point(data = global_us_china, aes(x = Year, y = us_andel,color = "USA")) + geom_point(data = global_us_china, aes(x = Year, y = china_andel,color = "China")) + labs(x = "Year", y = "Andel (1 tilsvarer 100%)", title = "Andel av verdens totale utslipp") 
-ggsave("USA_mot_kina.png",plot = p)
+a = ggplot() + geom_point(data = global_us_china, aes(x = Year, y = us_andel,color = "USA")) + geom_point(data = global_us_china, aes(x = Year, y = china_andel,color = "China")) + labs(x = "Year", y = "Andel (1 tilsvarer 100%)", title = "Andel av verdens totale utslipp") 
+ggsave("USA_mot_kina.png",plot = a)
