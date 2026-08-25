@@ -7,4 +7,4 @@ output: html_document
 
 Vi ser at USAs andel av verdens totale utslipp øker i årende frem mot 1950, før de avtar. Kinas andel av verdens totale utslipp tar derimot å øker. 
 
-![Bilde]()
+![Bilde](https://github.com/ragnhild-thielemann/projects_fall2026/blob/main/USA_mot_kina.png)
