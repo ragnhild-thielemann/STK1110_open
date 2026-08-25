@@ -32,5 +32,5 @@ for (i in 2:T){
 }
 
 lv = data.frame(Tid = T_v,Fox  = F_v , Rabbit = R_v)
-s = ggplot(lv) + geom_point(aes(x = Tid, y = Fox, color = "Fox")) + geom_point(aes(x = Tid, y = Rabbit,color = "Rabbit")) + labs(x = "Time", y = "Antall i bestanden", title = "Lotka-volterra")
-ggsave("dode_harer.png", plot = s)
+abs= ggplot(lv) + geom_point(aes(x = Tid, y = Fox, color = "Fox")) + geom_point(aes(x = Tid, y = Rabbit,color = "Rabbit")) + labs(x = "Time", y = "Antall i bestanden", title = "Lotka-volterra")
+ggsave("dode_harer.png", plot = abs)
