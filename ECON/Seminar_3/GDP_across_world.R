@@ -21,6 +21,8 @@ china_70_00 = china_70_00 |> filter(year > 1970)
 
 china_70_00$growrate[1] = 0
 
-ggplot(china_70_00) + geom_point(aes(x = year, y = growrate)) + labs(title = "Vekst i kinesisk økonomi")
+p = ggplot(china_70_00) + geom_point(aes(x = year, y = growrate)) + labs(x = "year", y = "growrate", title = "Kinesisk vekst")
+ggsave("kinas_vekst.png",plot = p)
 
-
+qnorm(1-0.01/2)
+pnorm(2.236)
