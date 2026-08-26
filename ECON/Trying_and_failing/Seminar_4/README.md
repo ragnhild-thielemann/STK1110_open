@@ -10,4 +10,4 @@ I første oppgave ser på verdens kummulative utslipp av CO2. Da vi ser på kumm
 
 Her er økningen i utslipp
 
-![Bilde](https://github.com/ragnhild-thielemann/projects_fall2026/blob/main/okning_i_utslipp_usa_kina.pdf)
+![Bilde](https://github.com/ragnhild-thielemann/projects_fall2026/blob/main/kummulative_utslipp_usa_kina.png)
