@@ -1,5 +1,5 @@
 
-library(readr)
+library(readxl) #imporerer pakken som leser exel-filer
 library(tidyverse)
 
 #leser inn filen som en dataframe

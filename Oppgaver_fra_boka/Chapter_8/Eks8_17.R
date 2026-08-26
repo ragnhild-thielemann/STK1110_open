@@ -19,7 +19,7 @@ ggplot(tip_frame) + geom_qq(aes(sample = tips),color = "hotpink") + geom_qq_line
 ggplot(tip_frame) + geom_histogram(aes(sample(tips)), fill = "hotpink") + labs(x = "Tips", y = "Antall", title = "Data")
 info = function(x){
   
-  return(c("mean" , mean(x), "st", sd(x),"median",median(x)))
+  return(c(mean =  mean(x), st = sd(x),median = median(x)))
   
 }
 
@@ -29,3 +29,12 @@ print(info(tip_frame$tips))
 
 #Definerer en funksjon, som regner gjennomsnittet av datasettet x, og gjør gjennomsnittet av observasjonene trukket ut til bootstrapputvalget
 my_mean = function(x,i){mean(x[i])}
+
+set.seed(1) #gjør at vi får tilbakelegging av dataene våre. 
+
+mean.boot = boot(data = tip_frame$tips,
+                 statistic = my_mean,
+                 R = 10000)
+
+print(mean.boot)
+print(info(tip_frame$tips))
