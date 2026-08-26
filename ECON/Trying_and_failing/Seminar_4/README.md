@@ -5,6 +5,4 @@ output: html_document
 
 # Oppgave 1
 
-Vi ser at USAs andel av verdens totale utslipp øker i årende frem mot 1950, før de avtar. Kinas andel av verdens totale utslipp tar derimot å øker. 
-
-![Bilde](https://github.com/ragnhild-thielemann/projects_fall2026/blob/main/USA_mot_kina.png)
+I første oppgave ser på verdens kummulative utslipp av CO2. Da vi ser på kummulative utslipp, blir grafen til USA liggende over Kinas, da kina ikke kommer i gang med den oppbygging av industri før senere. 

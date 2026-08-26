@@ -30,7 +30,6 @@ us = data.frame(Year = us$Year,us[4:5])
 china = co2 |> filter(Code == "CHN")
 names(china)[4:5]= c("Utslipp_China", "okning_China") #endrer navn på kolonnene, så det blir lettere å lese av
 china = data.frame(Year = china$Year,china[4:5])
-view(china)
 
 global = left_join(global,us)
 global = left_join(global,china)
@@ -42,5 +41,9 @@ global = global |> mutate("us_andel" = Utslipp_USA/Utslipp) |> mutate("kina_ande
 
 #Viktig modellantagelse = vi ser på kummulative utslipp! Derfor skal det mye til før kina tar igjen vesten :):)
 
-cum = ggplot(global) + geom_line(mapping = aes(x = Year, y = us_andel,color = "USA")) + geom_line(aes(x = Year , y = kina_andel, color = "Kina")) + labs(x = "Year", y = "Prosentandel", title = "Kummulative  utslipp")
+ggplot(global) + geom_line(mapping = aes(x = Year, y = us_andel,color = "USA")) + geom_line(aes(x = Year , y = kina_andel, color = "Kina")) + labs(x = "Year", y = "Prosentandel", title = "Kummulative  utslipp")
 ggsave("kummulative_utslipp.png", plot = cum)
+
+#plotter også økningen i CO2, da dette er et bedre mål på hvordan de ulike landnee er
+
+ggplot(global |> filter(Year > 1900)) + geom_line(mapping = aes(x = Year, y = okning_USA,color = "USA")) + geom_line(aes(x = Year , y = okning_China, color = "Kina")) + labs(x = "Year", y = "Prosentandel", title = "okning i utslipp")
