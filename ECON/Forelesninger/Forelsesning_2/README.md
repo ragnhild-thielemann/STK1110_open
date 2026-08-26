@@ -68,10 +68,6 @@ Utplukket i vektorer
   - use = c(T,T,F)
     - a[use] = gir oss 1 og 2 element, men ikke tredje
 
-## Data-frame = tibbls
-
-- data = data.frame(age,gender,income)
-  - Hver rad er en observasjon
 
 # Utvide R
 
@@ -79,4 +75,49 @@ Utplukket i vektorer
 - install.packages 
 - library()
   - de nye komandoene blir nå tilgjenlig
+
+# Data-frame = tibbls
+
+- data = data.frame(age,gender,income)
+  - Hver rad er en observasjon
+
+- read.file
+  - leser pene filer
+- read.csv 
+  - leser delt med comma (sep = "")
+- read.delim
+- Header = TRUE
+  - Dersom det er overskrifter til kolonnene
+  
+  
+# Betingelser
+
+- Kjøre koden ved gitte betingelser
+- Bruke if statements
+  - if (condition) { 
+    code ...}
+  
+- condition er et logisk statement (true/false)
+  - logiske statements
+    - if (x == 0){ 
+      code ...}
+      
+- Ved flere betingsler har vi 
+  - if both A and B are true : A & B
+  - if either A or B are true : A | B 
+  - if A not is true : !A
+  - En av dem er sanne : xor(A,B)
+  
+- Bruke pransetser til å kombinere komplekse utrykk
+
+## Logiske vektorer
+
+- x == 0 
+  - gir oss en bools vektor om hvorhvidt dette er sant
+
+- Et utsagn A
+  - any(A) : dersom en av objektene er sanne 
+  - all(A) : dersom alle objentene er sanne
+  
+
 
