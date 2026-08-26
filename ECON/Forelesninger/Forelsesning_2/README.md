@@ -22,7 +22,7 @@ output: html_document
 - Logical: a == 5, b> 10
   - Retunerer TRUE/FALSE or 1/0 , avhening av om vi gjør matematiske opprasjoner på dem
   
-### Oprasjoner på heltall
+### Heltall
 
 - 10 %% 3 = 1 , da man får en i rest
 - 10%/% 3 = 3 - Heltallsversonen av svaret
@@ -31,7 +31,7 @@ output: html_document
     
 ### Strings
 
-- noen funskjoner
+- noen funskjoner for strenger
   - paste(String1,String2, sep = " ") 
     - plasserer to strenger sammen
   - nhar(String) gir oss lengden til Strengen
@@ -39,4 +39,37 @@ output: html_document
 - Stringr - pakken gir oss flere funskjoner om strenger
 
 
+# Vektorer
+
+- Konstruerer vektorer ved r = c($e_1,e_2,....,e_n)$)
+- Oprasjoner komponeneter virker
+**Multiplikasjon**
+  - r*r - komponentene går mot hvareande
+  - r%*%r gir skalarproduktet
   
+- lage en range
+  - 1:5
+  - seq(1,11,by = 2) #making an sequence
+
+- Vektorer av like tall rep(1,10) 
+  - Kan også replikere vektorer rep(c(1,2), each = 5) or rep(c(1,2),times = 5)
+  
+- Random vektorer
+  - rnorm
+  - runiform
+  
+Utplukket i vektorer
+
+- En vektor a, a[1] gir oss det første elementet
+- For å få elementene 3-5, a[3:5]
+
+  - use = c(2,6,8) 
+    - a[use] - gir oss det 2, 6 og 8 elementet
+  - use = c(T,T,F)
+    - a[use] = gir oss 1 og 2 element, men ikke tredje
+
+# Data-frame = tibbls
+
+- data = data.frame(age,gender,income)
+  - Hver rad er en observasjon
+
