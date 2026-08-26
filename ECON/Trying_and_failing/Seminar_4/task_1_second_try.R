@@ -2,7 +2,8 @@
 
 library(readxl) #importerer pakken som leser excel-filer
 library(tidyverse) #Importerer biblioteket for plotting
-
+library(countrycode)
+?countrycode
 #leser inn filen som en dataframe
 co2 = read_excel("co2.xlsx", col_names = TRUE) #Leser inn filen, og presiserer at kolonnene har titler
 
@@ -46,4 +47,8 @@ ggsave("kummulative_utslipp.png", plot = cum)
 
 #plotter også økningen i CO2, da dette er et bedre mål på hvordan de ulike landnee er
 
-ggplot(global |> filter(Year > 1900)) + geom_line(mapping = aes(x = Year, y = okning_USA,color = "USA")) + geom_line(aes(x = Year , y = okning_China, color = "Kina")) + labs(x = "Year", y = "Prosentandel", title = "okning i utslipp")
+ggplot(global |> filter(Year > 1900)) + geom_line(mapping = aes(x = Year, y = log(okning_USA),color = "USA")) + geom_line(aes(x = Year , y = log(okning_China), color = "Kina")) + labs(x = "Year", y = "Prosentandel", title = "okning i utslipp")
+
+
+global = global |> mutate(continent = country(Code))
+view(global)
