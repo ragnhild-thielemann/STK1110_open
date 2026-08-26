@@ -118,6 +118,7 @@ Utplukket i vektorer
 - Et utsagn A
   - any(A) : dersom en av objektene er sanne 
   - all(A) : dersom alle objentene er sanne
-  
+
+
 
 
