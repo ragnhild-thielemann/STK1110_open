@@ -22,5 +22,3 @@ intervall = sqrt((s*(n-1))*c(1/u,1/l))
 print(intervall) #skriver ut koefedisiensintervaller for svanadaviket
 
 #Da hele koefedisiensintervallet ligger utenfor null, kan vi konkludere med at forskjellen mellom ulike strykere er signifikant
-
-

@@ -13,6 +13,10 @@ print(tip_frame)
 
 ggplot(tip_frame) + geom_qq(aes(sample = tips),color = "hotpink") + geom_qq_line(aes(sample = tips ),color = "blue")  +   labs(x = "z-score", y = "sample")
 #Av qq-plotet ser vi at fordelingen er positivt skjev. Når vi finner median og forventningsverdi, ser vi at median < forventingsverdi, som bekreftere positiv skjevhet i fordelingen
+
+#lager også et histogram, så den skjeve fordelingen komemr tydligere frem
+
+ggplot(tip_frame) + geom_histogram(aes(sample(tips)), fill = "hotpink") + labs(x = "Tips", y = "Antall", title = "Data")
 info = function(x){
   
   return(c("mean" , mean(x), "st", sd(x),"median",median(x)))
@@ -22,3 +26,6 @@ info = function(x){
 print(info(tip_frame$tips))
 
 #Trimmed mean -> forventingsverdi der man fjerner ekstremverdiene
+
+#Definerer en funksjon, som regner gjennomsnittet av datasettet x, og gjør gjennomsnittet av observasjonene trukket ut til bootstrapputvalget
+my_mean = function(x,i){mean(x[i])}
