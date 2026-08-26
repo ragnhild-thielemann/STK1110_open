@@ -2,7 +2,7 @@
 title: "README"
 output: html_document
 ---
-
+# Basic R
 ## Variable tybes
 
 - Double: desimaltall (tilsvarende float)
@@ -39,7 +39,7 @@ output: html_document
 - Stringr - pakken gir oss flere funskjoner om strenger
 
 
-# Vektorer
+## Vektorer
 
 - Konstruerer vektorer ved r = c($e_1,e_2,....,e_n)$)
 - Oprasjoner komponeneter virker
@@ -68,8 +68,15 @@ Utplukket i vektorer
   - use = c(T,T,F)
     - a[use] = gir oss 1 og 2 element, men ikke tredje
 
-# Data-frame = tibbls
+## Data-frame = tibbls
 
 - data = data.frame(age,gender,income)
   - Hver rad er en observasjon
+
+# Utvide R
+
+## Bruke en pakke
+- install.packages 
+- library()
+  - de nye komandoene blir nå tilgjenlig
 

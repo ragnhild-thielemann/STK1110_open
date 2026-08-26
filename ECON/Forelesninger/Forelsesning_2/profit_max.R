@@ -12,4 +12,4 @@ typeof(pi)
 
 a = c(4,32,4,2)
 b = c(5,3,2,4)
-print(a*b)
+print(a%*%b)
