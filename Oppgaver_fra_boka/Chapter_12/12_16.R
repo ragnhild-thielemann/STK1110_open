@@ -11,7 +11,7 @@ datter = data[,"daughter"]
 ggplot(data) + geom_point(aes(x = midpar, y = daughter)) + labs(x = "Foreldre", y = "Datter")
 
 model = lm(data$daughter ~ data$midpar)
-summary(model)
+
 
 a = coefficients(model)
 print(a)
@@ -30,3 +30,7 @@ data = data |> mutate(y = funk(data$midpar))
 #lager et plott, der vi har fått med dataene våre
 ggplot(data) + geom_point(aes(x = midpar, y = daughter)) + geom_line(aes(x = midpar, y = y)) + labs(x = "Foreldre", y = "Datter")
 
+summary(model)
+
+q = qt(0.975,9)
+print(q)
