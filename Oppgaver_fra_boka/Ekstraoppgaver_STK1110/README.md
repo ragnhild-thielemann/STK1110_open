@@ -16,5 +16,6 @@ $$
 Der 
 
 $$
-L(\lambda) =  \Pi \lambda \e^{- \lambda x_i}
+L(\lambda) =  \Pi \lambda e^{- \lambda x_i}
 $$
+
