@@ -47,3 +47,9 @@ $$
 
 
 Når vi bare inkluderer en variabel, ser vi at $b_2$ får en høyere p-verdi. Den økte verdien som følge av fjerneingen av  en kovariat $x_1$ kan forklares ved at korrelasjonen mellom $x_1$ og $x_2$ er 0.3924
+
+
+# Relevante komaodner
+
+- na.omit(vektor)
+  - garantere at det ikke er noen tomme celler i vektoren
